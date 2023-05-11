@@ -21,7 +21,7 @@ spec:
         app: ecsdemo-nodejs
     spec:
       containers:
-      - image: brentley/ecsdemo-nodejs:latest
+      - image: 589076948308.dkr.ecr.ap-south-1.amazonaws.com/eks:latest
         imagePullPolicy: Always
         name: ecsdemo-nodejs
         ports:
