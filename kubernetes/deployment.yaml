@@ -21,7 +21,7 @@ spec:
         app: ecsdemo-nodejs
     spec:
       containers:
-      - image: 598548550064.dkr.ecr.ap-south-1.amazonaws.com/eks:v2
+      - image: 598548550064.dkr.ecr.ap-south-1.amazonaws.com/eks:v3
         imagePullPolicy: Always
         name: ecsdemo-nodejs
         ports:
