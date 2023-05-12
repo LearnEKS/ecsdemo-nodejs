@@ -1,36 +1,12 @@
-# Please edit the object below. Lines beginning with a '#' will be ignored,
-# and an empty file will abort the edit. If an error occurs while saving this file will be
-# reopened with the relevant failures.
-#
 apiVersion: v1
 kind: Service
 metadata:
-  creationTimestamp: "2023-05-12T10:49:42Z"
-  finalizers:
-  - service.kubernetes.io/load-balancer-cleanup
-  labels:
-    app.kubernetes.io/instance: hello
   name: ecsdemo-nodejs
-  resourceVersion: "1532629"
-  uid: 779c5e49-65a0-45ae-8101-a61e1e95d125
 spec:
-  allocateLoadBalancerNodePorts: true
-  clusterIP: 10.100.224.126
-  clusterIPs:
-  - 10.100.224.126
-  externalTrafficPolicy: Cluster
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
-  ports:
-  - nodePort: 31005
-    port: 80
-    protocol: TCP
-    targetPort: 3000
+  type: LoadBalancer
   selector:
     app: ecsdemo-nodejs
-  sessionAffinity: None
-  type: ClusterIP
-status:
-  loadBalancer:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
